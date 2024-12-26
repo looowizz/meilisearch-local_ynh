@@ -19,13 +19,15 @@ curl -s -X POST 'http://localhost:__PORT__/keys' -H 'Content-Type: application/j
 > Also note: the <index_name> will likely have specific requirements (for example it needs
  to end in `---notes` for [Sharkey](https://docs.joinsharkey.org/docs/customisation/meilisearch))
 
-2. List keys:
+ This will output the key to use for the login details.
+
+2. List keys and confirm your created key has been added:
 
 ```shell
 curl -s 'http://localhost:__PORT__/keys'   -H "Authorization: Bearer __KEY__" | jq .
 ```
 
-The login details for the service are then:
+3. The login details for the service are then:
 ```yaml
 Host: 'localhost:__PORT__' OR Host: 'localhost', port: '__PORT__'
 API key: '<key_from_previous_steps>'

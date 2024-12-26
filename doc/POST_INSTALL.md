@@ -3,7 +3,7 @@ Services must log into this meilisearch instance from the same server it is inst
 To create a new key for a service (replacing the values in angle brackets <>), you may
 try to follow these steps, but consult your chosen service for their specific steps if it fails.
 
-Create an API key:
+1. Create an API key:
 ```shell
 
 curl -s -X POST 'http://localhost:__PORT__/keys' -H 'Content-Type: application/json'   -H "Authorization: Bearer __KEY__"   --data-binary '{
@@ -19,7 +19,7 @@ curl -s -X POST 'http://localhost:__PORT__/keys' -H 'Content-Type: application/j
 > Also note: the <index_name> will likely have specific requirements (for example it needs
  to end in `---notes` for [Sharkey](https://docs.joinsharkey.org/docs/customisation/meilisearch))
 
-List keys:
+2. List keys:
 
 ```shell
 curl -s 'http://localhost:__PORT__/keys'   -H "Authorization: Bearer __KEY__" | jq .

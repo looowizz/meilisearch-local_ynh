@@ -32,10 +32,6 @@ ram.runtime = "50M"
 
 [install]
 
-    [install.init_main_permission]
-    type = "group"
-    default = "visitors"
-
 [resources]
 
     [resources.sources]

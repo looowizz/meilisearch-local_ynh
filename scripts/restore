@@ -15,8 +15,6 @@ ynh_restore "$install_dir"
 #=================================================
 ynh_script_progression "Restoring $app's systemd service..."
 
-ynh_restore "/etc/nginx/conf.d/$domain.d/$app.conf"
-
 ynh_restore "/etc/systemd/system/$app.service"
 systemctl enable $app.service --quiet
 

@@ -31,8 +31,6 @@ ram.build = "70M"
 ram.runtime = "50M"
 
 [install]
-    [install.domain]
-    type = "domain"
 
     [install.init_main_permission]
     type = "group"
@@ -60,6 +58,3 @@ ram.runtime = "50M"
 
     [resources.install_dir]
     group = "www-data:r-x"
-
-    [resources.permissions]
-    main.url = "/"

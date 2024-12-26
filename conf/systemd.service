@@ -7,7 +7,8 @@ Type=simple
 User=__APP__
 Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
-ExecStart=__INSTALL_DIR__/meilisearch --config-file-path __INSTALL_DIR__/config.toml
+Environment="MEILI_CONFIG_FILE_PATH=__INSTALL_DIR__/config.toml"
+ExecStart=__INSTALL_DIR__/meilisearch
 
 # Sandboxing options to harden security
 # Depending on specificities of your service/app, you may need to tweak these

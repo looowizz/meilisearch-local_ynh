@@ -15,9 +15,7 @@ chmod +x "$install_dir/meilisearch"
 #=================================================
 # NGINX CONFIGURATION
 #=================================================
-ynh_script_progression "Configuring NGINX web server..."
-
-ynh_config_add_nginx
+ynh_script_progression "Configuring systemd..."
 
 ynh_config_add_systemd
 

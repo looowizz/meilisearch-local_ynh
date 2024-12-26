@@ -24,8 +24,6 @@ chmod +x "$install_dir/meilisearch"
 #=================================================
 ynh_script_progression "Configuring $app's systemd service..."
 
-ynh_config_add_nginx
-
 ynh_config_add_systemd
 
 ynh_config_add_logrotate
@@ -37,7 +35,7 @@ yunohost service add $app --description="Opensource next generation search API" 
 #=================================================
 ynh_script_progression "Adding $app's configuration..."
 
-key=$(ynh_string_random --length=16)
+key=$(ynh_app_setting_get --key=key)
 
 ynh_config_add --template="config.toml" --destination="$install_dir/config.toml"
 

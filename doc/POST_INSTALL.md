@@ -22,7 +22,7 @@ curl -s -X POST 'http://localhost:__PORT__/keys' -H 'Content-Type: application/j
 List keys:
 
 ```shell
-curl -s 'http://localhost:__PORT__/keys'   -H "Authorization: Bearer $MASTER_KEY" | jq .
+curl -s 'http://localhost:__PORT__/keys'   -H "Authorization: Bearer __KEY__" | jq .
 ```
 
 The login details for the service are then:

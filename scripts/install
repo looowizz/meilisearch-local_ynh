@@ -29,6 +29,7 @@ yunohost service add $app --description="Opensource next generation search API" 
 ynh_script_progression "Adding $app's configuration..."
 
 key=$(ynh_string_random --length=16)
+ynh_app_setting_set --key=key --value="$key"
 
 ynh_config_add --template="config.toml" --destination="$install_dir/config.toml"
 

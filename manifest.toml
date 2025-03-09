@@ -5,7 +5,7 @@ name = "MeiliSearch"
 description.en = "Lightning Fast, Ultra Relevant, and Typo-Tolerant Search Engine"
 description.fr = "Moteur de recherche rapide, ultra-performant et tolérant aux fautes de frappe"
 
-version = "1.12.0~ynh1"
+version = "1.13.3~ynh1"
 
 maintainers = ["Loowiz"]
 
@@ -17,7 +17,7 @@ admindoc = "https://www.meilisearch.com/docs"
 code = "https://github.com/meilisearch/meilisearch/"
 
 [integration]
-yunohost = ">= 11.2.30"
+yunohost = ">= 12.0.9"
 helpers_version = "2.1"
 architectures = ["amd64", "arm64"]
 multi_instance = false
@@ -36,17 +36,17 @@ ram.runtime = "50M"
 
     [resources.sources]
 
-        [resources.sources.main]
-        amd64.url = "https://github.com/meilisearch/meilisearch/releases/download/v1.12.0/meilisearch-linux-amd64"
-        amd64.sha256 = "865a3fc222e3b3bd1f4b64346cb114b9669af691aae28d71fa68dbf39427abcf"
-        arm64.url = "https://github.com/meilisearch/meilisearch/releases/download/v1.12.0/meilisearch-linux-aarch64"
-        arm64.sha256 = "9b3781af4db49382cbbc2c0e6f69afb3b82d3ad820e81a7e4999b32b4f71edc2"
-        rename = "meilisearch"
-        in_subdir = false
-        extract = false
-        autoupdate.strategy = "latest_github_release"
-        autoupdate.asset.amd64 = "^meilisearch-linux-amd64$"
-        autoupdate.asset.arm64 = "^meilisearch-linux-aarch64$"
+    [resources.sources.main]
+    amd64.url = "https://github.com/meilisearch/meilisearch/releases/download/v1.13.3/meilisearch-linux-amd64"
+    amd64.sha256 = "077ab23bb5ab9bdd1765e9f1641eec8eefd793d3d51f0fd3e8357fb0ad43770c"
+    arm64.url = "https://github.com/meilisearch/meilisearch/releases/download/v1.13.3/meilisearch-linux-aarch64"
+    arm64.sha256 = "caca9e054fd7d4bdc532a48eb540eb0dc31aef29963899df15caf376932e6fa9"
+    rename = "meilisearch"
+    in_subdir = false
+    extract = false
+    autoupdate.strategy = "latest_github_release"
+    autoupdate.asset.amd64 = "^meilisearch-linux-amd64$"
+    autoupdate.asset.arm64 = "^meilisearch-linux-aarch64$"
 
     [resources.ports]
 

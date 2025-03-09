@@ -8,7 +8,9 @@ User=__APP__
 Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
 Environment="MEILI_CONFIG_FILE_PATH=__INSTALL_DIR__/config.toml"
-ExecStart=__INSTALL_DIR__/meilisearch
+ExecStart=ExecStart=__INSTALL_DIR__/meilisearch --experimental-dumpless-upgrade
+StandardOutput=append:/var/log/__APP__/__APP__.log
+StandardError=inherit
 
 # Sandboxing options to harden security
 # Depending on specificities of your service/app, you may need to tweak these

@@ -13,7 +13,7 @@ ynh_setup_source --dest_dir="$install_dir"
 chmod +x "$install_dir/meilisearch"
 
 #=================================================
-# NGINX CONFIGURATION
+# CONFIGURATION
 #=================================================
 ynh_script_progression "Configuring systemd..."
 
@@ -39,10 +39,10 @@ ynh_config_add --template="config.toml" --destination="$install_dir/config.toml"
 ynh_script_progression "Starting $app's systemd service..."
 
 # Start a systemd service
-ynh_systemctl --service=$app --action="start"
+ynh_systemctl --service="$app" --action="start" --wait_until="starting in Actix runtime" --log_path="/var/log/$app/$app.log"
 
 #=================================================
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression "Installation of Meilisearch completed"
+ynh_script_progression "Installation of $app completed"

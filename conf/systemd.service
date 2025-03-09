@@ -8,7 +8,7 @@ User=__APP__
 Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
 Environment="MEILI_CONFIG_FILE_PATH=__INSTALL_DIR__/config.toml"
-ExecStart=ExecStart=__INSTALL_DIR__/meilisearch --experimental-dumpless-upgrade
+ExecStart=__INSTALL_DIR__/meilisearch --experimental-dumpless-upgrade
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=inherit
 

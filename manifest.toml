@@ -1,3 +1,5 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/master/schemas/manifest.v2.schema.json
+
 packaging_format = 2
 
 id = "meilisearch-local"
@@ -5,7 +7,7 @@ name = "MeiliSearch"
 description.en = "Lightning Fast, Ultra Relevant, and Typo-Tolerant Search Engine"
 description.fr = "Moteur de recherche rapide, ultra-performant et tolérant aux fautes de frappe"
 
-version = "1.13.3~ynh1"
+version = "1.39.0~ynh1"
 
 maintainers = ["Loowiz"]
 
@@ -17,13 +19,12 @@ admindoc = "https://www.meilisearch.com/docs"
 code = "https://github.com/meilisearch/meilisearch/"
 
 [integration]
-yunohost = ">= 12.0.9"
+yunohost = ">= 12.1.38"
 helpers_version = "2.1"
 architectures = ["amd64", "arm64"]
 multi_instance = false
 
 ldap = false
-
 sso = false
 
 disk = "50M"
@@ -37,10 +38,10 @@ ram.runtime = "50M"
     [resources.sources]
 
     [resources.sources.main]
-    amd64.url = "https://github.com/meilisearch/meilisearch/releases/download/v1.13.3/meilisearch-linux-amd64"
-    amd64.sha256 = "077ab23bb5ab9bdd1765e9f1641eec8eefd793d3d51f0fd3e8357fb0ad43770c"
-    arm64.url = "https://github.com/meilisearch/meilisearch/releases/download/v1.13.3/meilisearch-linux-aarch64"
-    arm64.sha256 = "caca9e054fd7d4bdc532a48eb540eb0dc31aef29963899df15caf376932e6fa9"
+    amd64.url = "https://github.com/meilisearch/meilisearch/releases/download/v1.39.0/meilisearch-linux-amd64"
+    amd64.sha256 = "463e6c2d3c0b2313d9664936b24b1de0955967ba0959d5f2bb59e7c3954d3e72"
+    arm64.url = "https://github.com/meilisearch/meilisearch/releases/download/v1.39.0/meilisearch-linux-aarch64"
+    arm64.sha256 = "eac2a52674ea17d3b85a1a33eef92a6508ff339024680252821710f37c16def8"
     rename = "meilisearch"
     in_subdir = false
     extract = false
@@ -48,9 +49,9 @@ ram.runtime = "50M"
     autoupdate.asset.amd64 = "^meilisearch-linux-amd64$"
     autoupdate.asset.arm64 = "^meilisearch-linux-aarch64$"
 
-    [resources.ports]
-
     [resources.system_user]
 
     [resources.install_dir]
     group = "www-data:r-x"
+
+    [resources.ports]

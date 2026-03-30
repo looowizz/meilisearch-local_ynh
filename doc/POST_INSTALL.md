@@ -1,0 +1,36 @@
+Services must log into this meilisearch instance from the same server it is installed on.
+
+To create a new key for a service (replacing the values in angle brackets <>), you may
+try to follow these steps, but consult your chosen service for their specific steps if it fails.
+
+1. Create an API key:
+```shell
+
+curl -s -X POST 'http://localhost:__PORT__/keys' -H 'Content-Type: application/json'   -H "Authorization: Bearer __KEY__"   --data-binary '{
+    "description": "<description>",
+    "actions": ["*"],
+    "indexes": ["<index_name>"],
+    "expiresAt": "2027-01-01T00:00:00Z"
+  }' | jq '.key'
+
+```
+> Note: Use `"expiresAt": null` to never expire.
+
+> Also note: the <index_name> will likely have specific requirements (for example it needs
+ to end in `---notes` for [Sharkey](https://docs.joinsharkey.org/docs/customisation/meilisearch))
+
+ This will output the key to use for the login details.
+
+2. List keys and confirm your created key has been added:
+
+```shell
+curl -s 'http://localhost:__PORT__/keys'   -H "Authorization: Bearer __KEY__" | jq .
+```
+
+3. The login details for the service are then:
+```yaml
+Host: 'localhost:__PORT__' OR Host: 'localhost', port: '__PORT__'
+API key: '<key_from_previous_steps>'
+index: '<index_name>'
+scope: 'global'
+```

@@ -1,9 +1,5 @@
 #!/bin/bash
 
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -17,8 +13,6 @@ ynh_restore "$install_dir"
 # RESTORE SYSTEM CONFIGURATIONS
 #=================================================
 ynh_script_progression "Restoring system configurations related to $app..."
-
-ynh_restore "/etc/nginx/conf.d/$domain.d/$app.conf"
 
 ynh_restore "/etc/systemd/system/$app.service"
 systemctl enable "$app.service" --quiet
@@ -35,11 +29,9 @@ ynh_restore "/var/log/$app/"
 #=================================================
 # RELOAD NGINX AND PHP-FPM OR THE APP SERVICE
 #=================================================
-ynh_script_progression "Reloading NGINX web server and $app's service..."
+ynh_script_progression "Reloading $app's service..."
 
 ynh_systemctl --service="$app" --action="start" --wait_until="starting in Actix runtime" --log_path="/var/log/$app/$app.log"
-
-ynh_systemctl --service=nginx --action=reload
 
 #=================================================
 # END OF SCRIPT

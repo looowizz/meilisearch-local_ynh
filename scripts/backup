@@ -1,9 +1,5 @@
 #!/bin/bash
 
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source /usr/share/yunohost/helpers
 
 ynh_print_info "Declaring files to be backed up..."
@@ -17,9 +13,6 @@ ynh_backup "$install_dir"
 #=================================================
 # BACKUP SYSTEM CONFIGURATION
 #=================================================
-
-# Backup the NGINX configuration
-ynh_backup "/etc/nginx/conf.d/$domain.d/$app.conf"
 
 # Backup the systemd service unit
 ynh_backup "/etc/systemd/system/$app.service"
